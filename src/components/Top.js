@@ -1,16 +1,13 @@
 import React from 'react';
 
 const Top = () => {
-  function handlePesan() {
+  const handlePesan = (value) => {                // parameter ini
     alert("Halaman Top Tampil");
+    alert(value);
   }
 
-  // const handlePesan = () => {            // option lain membuat fungsi
-  //   alert("Halaman Top Tampil");
-  // }
-
   return (
-    <a href="/" onClick={handlePesan}>
+    <a href="/" onClick={()=>handlePesan("Pesan dari Top")}>
       Halaman Top
     </a>
   );
