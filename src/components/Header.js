@@ -10,7 +10,8 @@ class Header extends Component {
     this.handlePesan = this.handlePesan.bind(this);
   }
 
-  handlePesan(value) {                                 // parameter ini
+  handlePesan(value, e) {
+    e.preventDefault();                                   // preventDefault ini utk supaya tidak reload. Dan, variable 'e' itu tidak hrs 'e', bisa diganti dgn nama apapun. Namun disarankan menggunakan 'e'
     alert(this.state.daftar);
     alert(value);
   }
@@ -21,7 +22,7 @@ class Header extends Component {
         <h2>Makanan khas Indonesia</h2>
         <p>{this.state.daftar}</p>
         <p>{this.state.dataList}</p>
-        <a href="/" onClick={()=>this.handlePesan("Pesan dari Header")}>
+        <a href="/" onClick={(e)=>this.handlePesan("Pesan dari Header", e)}>
           Halaman Header
         </a>
       </div>
