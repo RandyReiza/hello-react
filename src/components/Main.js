@@ -7,11 +7,17 @@ class Main extends Component {
     this.state = {
       title: "Menu Makanan"
     };
-    this.rubahData = this.rubahData.bind(this);               // utk da=pt memasukkan 'this' ke dalam fungsi yg dituju, fungsi yg dituju dlm kasus ini adalah fungsi 'rubahData'
+    this.rubahData = this.rubahData.bind(this);               // utk dapat memasukkan 'this' ke dalam fungsi yg dituju, fungsi yg dituju dlm kasus ini adalah fungsi 'rubahData'
   }
 
-  rubahData() {
-    this.setState({title: "Pilih Makanan"});
+  // rubahData() {
+  //   this.setState({title: "Pilih Makanan"});
+  // }
+
+  rubahData() {                                               // bentuk lain utk fungsi 'rubahData', utk merubah value state
+    this.setState((state, props) => {                         // dan ini penulisan yg RECOMENDED
+      return {title: "Pilih Menu Makanan"};
+    });
   }
 
   render() {
