@@ -23,6 +23,16 @@ class Main extends Component {
   }
 
   handleChange(e) {
+    // this.setState({inputValue: e.target.value});              // supaya state yg diubah dr kolom input dapat langsung diubah isinya
+
+
+    const eventTarget = e.target.value;                          // penulisannya ini yg recomended kalo butuh props atau mau lbh dinamis
+    this.setState((state, props) => {
+      return{
+        inputValue: eventTarget
+      };
+    });
+
     console.log(e.target.value);
   }
 
