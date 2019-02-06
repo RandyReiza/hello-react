@@ -7,7 +7,8 @@ class Main extends Component {
     this.state = {
       title: "Menu Makanan",
       title2: "Menu Minuman",
-      inputValue: "Nasi Padang Nusantara"
+      inputValue: "",
+      inputKota: ""
     };
     this.rubahData = this.rubahData.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -22,16 +23,16 @@ class Main extends Component {
     });
   }
 
-  handleChange(e) {
-    // this.setState({inputValue: e.target.value});              // supaya state yg diubah dr kolom input dapat langsung diubah isinya
+  handleChange(value, e) {
+    this.setState({ [value] : e.target.value});              // supaya state yg diubah dr kolom input dapat langsung diubah isinya
 
 
-    const eventTarget = e.target.value;                          // penulisannya ini yg recomended kalo butuh props atau mau lbh dinamis
-    this.setState((state, props) => {
-      return{
-        inputValue: eventTarget
-      };
-    });
+    // const eventTarget = e.target.value;                          // penulisannya ini yg recomended kalo butuh props atau mau lbh dinamis
+    // this.setState((state, props) => {
+    //   return{
+    //     inputValue: eventTarget
+    //   };
+    // });
 
     console.log(e.target.value);
   }
@@ -45,7 +46,18 @@ class Main extends Component {
 
         <br />
         <br />
-        <input type="text" value={this.state.inputValue} onChange={this.handleChange}/>
+        <input
+          type="text"
+          value={this.state.inputValue}
+          onChange={e => this.handleChange("inputValue", e)}
+          placeholder="name"
+        />
+        <input
+          type="text"
+          value={this.state.inputKota}
+          onChange={e => this.handleChange("inputKota", e)}
+          placeholder="kota"
+        />
       </div>
     );
   }
