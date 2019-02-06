@@ -6,7 +6,8 @@ class Main extends Component {
     super(props);
     this.state = {
       title: "Menu Makanan",
-      title2: "Menu Minuman"
+      title2: "Menu Minuman",
+      inputValue: "Nasi Padang Nusantara"
     };
     this.rubahData = this.rubahData.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -34,7 +35,7 @@ class Main extends Component {
 
         <br />
         <br />
-        <input type="text" onChange={this.handleChange}/>
+        <input type="text" value={this.state.inputValue} onChange={this.handleChange}/>
       </div>
     );
   }
