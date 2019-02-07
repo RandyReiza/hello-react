@@ -2,7 +2,8 @@ import React, {Component} from "react";
 import Header from "./Header";
 import Top from "./Top";
 // import Main from "./Main";
-import Form from "./Form";
+// import Form from "./Form";
+import CustomInput from "./CustomInput";
 import Footer from "./Footer";
 // import List from "./List";
 
@@ -12,8 +13,9 @@ class App extends Component {
       <div>
         <Header list="3 Terbaik" />
         <Top />
-        <Form />
+        <CustomInput />
         {
+          // <Form />
           // <Main />                                     // penulisan comment di dalam fungsi 'return()' hrs dibungkus dgn {}
           // <List />
         }
