@@ -8,7 +8,25 @@ class Main extends Component {
       title: "Menu Makanan",
       title2: "Menu Minuman",
       inputValue: "",
-      inputKota: ""
+      inputKota: "",
+      menuMakanan: [
+        {
+          nama: "Mie Ayam",
+          harga: 10000
+        },
+        {
+          nama: "Bakso",
+          harga: 15000
+        },
+        {
+          nama: "Mie Ayam Bakso",
+          harga: 20000
+        },
+        {
+          nama: "Soto",
+          harga: 10000
+        }
+      ]
     };
     this.rubahData = this.rubahData.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -58,6 +76,17 @@ class Main extends Component {
           onChange={e => this.handleChange("inputKota", e)}
           placeholder="kota"
         />
+
+        {this.state.menuMakanan.map((data, index) => {
+          console.log(data);
+          return (
+            <div key={index}>
+              <p>No : {index + 1}</p>
+              <p>Nama Makanan : {data.nama}</p>
+              <p>Harga : {data.harga}</p>
+            </div>
+          )
+        })}
       </div>
     );
   }
